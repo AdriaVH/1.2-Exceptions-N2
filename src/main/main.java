@@ -1,3 +1,5 @@
+package main;
+
 public class main {
     public static void main(String[] args) {
         //Crea una classe anomenada "Entrada". Aquesta classe ha de servir per controlar les diferents excepcions que poden
