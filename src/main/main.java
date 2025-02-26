@@ -1,8 +1,7 @@
 package main;
 
 import classes.Input;
-
-import java.util.Scanner;
+import java.lang.*;
 
 public class main {
     public static void main(String[] args) {
@@ -31,6 +30,24 @@ public class main {
         // public static String llegirString(String missatge);
         // public static boolean llegirSiNo(String missatge), si l’usuari/ària introdueix “s”, retorna “true”, si
         // l’usuari/ària introdueix “n”, retorna “false”.System.out.println("Hello world!");
+
+
+        byte edat = Input.readByte("Introdueix la teva edat: ");
+        int any = Input.readInt("Introdueix l'any: ");
+        float pes = Input.readFloat("Introdueix el teu pes (en kg): ");
+        double alçada = Input.readDouble("Introdueix la teva alçada (en metres): ");
+        char sexe = Input.readChar("Introdueix el teu sexe (M/F): ");
+        String nom = Input.readString("Introdueix el teu nom: ");
+        boolean estaCasat = Input.readBoolean("Estàs casat? (y/n): ");
+
+        System.out.println("\nANSWERS:\n");
+        System.out.println("Edat: " + edat);
+        System.out.println("Any: " + any);
+        System.out.println("Pes: " + pes + " kg");
+        System.out.println("Alçada: " + alçada + " metres");
+        System.out.println("Sexe: " + sexe);
+        System.out.println("Nom: " + nom);
+        System.out.println("Està casat: " + (estaCasat ? "Yes" : "No"));
 
     }
 }
