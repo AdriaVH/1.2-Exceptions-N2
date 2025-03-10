@@ -13,12 +13,18 @@ Tots els mètodes reben un String amb el missatge que es vol mostrar a l’usuar
 Mètodes a implantar capturant l’excepció de la classe "InputMismatchException":
 
 public static byte llegirByte(String missatge);
+
 public static int llegirInt(String missatge);
+
 public static float llegirFloat(String missatge);
+
 public static double llegirDouble(String missatge);
+
 
 Mètodes a implantar capturant una excepció personalitzada de la classe Exception:
 
 public static char llegirChar(String missatge);
+
 public static String llegirString(String missatge);
+
 public static boolean llegirSiNo(String missatge), si l’usuari/ària introdueix “s”, retorna “true”, si l’usuari/ària introdueix “n”, retorna “false”.
