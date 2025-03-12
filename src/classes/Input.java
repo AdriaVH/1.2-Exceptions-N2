@@ -1,16 +1,15 @@
 package classes;
 
-import exceptions.myException;
+import exceptions.MyException;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Input extends myException {
+public class Input extends MyException {
     static Scanner sc = new Scanner(System.in);
 
     public Input() {
     }
-
     public static byte readByte(String missatge) {
         Byte result = null;
         while (result == null) {
@@ -22,10 +21,8 @@ public class Input extends myException {
                 sc.nextLine();
             }
         }
-        
         return result;
     }
-
     public static int readInt(String missatge) {
         Integer result = null;
         while (result == null) {
@@ -76,9 +73,9 @@ public class Input extends myException {
                 if (input.length() == 1) {
                     result = input.charAt(0);
                 } else {
-                    throw new myException("Error format. Only a single character is allowed. ");
+                    throw new MyException("Error format. Only a single character is allowed. ");
                 }
-            } catch (myException e) {
+            } catch (MyException e) {
                 System.out.print(e.getMessage());
             }
         }
@@ -107,11 +104,10 @@ public class Input extends myException {
                 if (input.length() == 1 && (input.charAt(0) == 'y' || input.charAt(0) == 'n')) {
                     result = input.charAt(0) == 'y';
                 } else {
-                    throw new myException("Error format. Only takes \"y\" or \"n\". " + missatge);
+                    throw new MyException("Error format. Only takes \"y\" or \"n\". " + missatge);
                 }
-            } catch (myException e) {
+            } catch (MyException e) {
                 System.out.print(e.getMessage());
-
             }
         }
         return result;
