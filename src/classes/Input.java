@@ -2,6 +2,7 @@ package classes;
 
 import exceptions.MyException;
 
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -64,19 +65,21 @@ public class Input extends MyException {
         }
         return result;
     }
-    public static char readChar(String missatge) {
+    public static char readChar(String missatge, String... words) {
         char result = '\0';
         while (result == '\0') {
             try {
                 System.out.println(missatge);
-                String input = sc.nextLine();
-                if (input.length() == 1) {
+                String input = sc.nextLine().toUpperCase();
+                if (input.length() == 1 && Arrays.stream(words).toList().contains(input)) {
                     result = input.charAt(0);
                 } else {
-                    throw new MyException("Error format. Only a single character is allowed. ");
+                    throw new MyException("Error format. Only a single character is allowed. Type: "
+                            + Arrays.stream(words).toList().toString());
                 }
             } catch (MyException e) {
                 System.out.print(e.getMessage());
+                sc.nextLine();
             }
         }
         return result;
@@ -104,7 +107,7 @@ public class Input extends MyException {
                 if (input.length() == 1 && (input.charAt(0) == 'y' || input.charAt(0) == 'n')) {
                     result = input.charAt(0) == 'y';
                 } else {
-                    throw new MyException("Error format. Only takes \"y\" or \"n\". " + missatge);
+                    throw new MyException("Error format. Only takes \"y\" or \"n\". ");
                 }
             } catch (MyException e) {
                 System.out.print(e.getMessage());
